@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": " nodemon node trade.js"
+        "start": " node trade.js"
     },
     "author": "",
     "license": "ISC",

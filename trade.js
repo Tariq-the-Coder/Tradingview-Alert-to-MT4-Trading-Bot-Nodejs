@@ -64,7 +64,9 @@ app.post('/trade', async(req, res) => {
             volume: volume,
             openPrice: openPrice,
             takeProfit: takeProfit,
-            stopLoss: stopLoss
+            stopLoss: stopLoss,
+            stopLossUnits:"RELATIVE_PIPS",
+            takeProfitUnits:"RELATIVE_PIPS"
         };
 
         const config = {

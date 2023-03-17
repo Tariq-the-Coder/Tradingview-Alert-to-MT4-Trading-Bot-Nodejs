@@ -22,7 +22,7 @@ app.get('/', async(req, res) => {
 });
 
 app.post('/trade', async(req, res) => {
-    const { actionType, symbol, volume, openPrice, stopLoss, takeProfit } = req.body;
+    const { actionType, symbol, volume, openPrice, stopLoss, takeProfit, distance } = req.body;
     req.setTimeout(60000); // Set timeout to 60 seconds (in milliseconds)
     try {
         // Add test MetaTrader account
@@ -64,7 +64,9 @@ app.post('/trade', async(req, res) => {
             volume: volume,
             openPrice: openPrice,
             takeProfit: takeProfit,
-            stopLoss: stopLoss
+            stopLoss: stopLoss,
+            trailingStopLoss: "distance",
+            distance: distance
         };
 
         const config = {
